@@ -12,7 +12,8 @@
 	<nav>
 	  <ul>    
 	    <?php foreach($items as $item): ?>
-	    <li><a<?php ecco($item->isOpen(), ' class="active"') ?> href="<?php echo $item->url() ?>"><?php echo html($item->title()) ?></a></li>
+    	<li><i class="fa fa-facebook-square"></i> <i class="fa fa-twitter-square"></i> <i class="fa fa-pencil-square"></i></li>
+	    <li><a onclick="document._audio.pause()" <?php ecco($item->isOpen(), ' class="active"') ?> href="<?php echo $item->url() ?>"><?php echo html($item->title()) ?></a></li>
 	    <?php endforeach ?>
 	    <li>webdesign & development by jonathanmuth</li>
 	  </ul>

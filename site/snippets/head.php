@@ -11,9 +11,19 @@
   <?php echo css('assets/styles/styles.css') ?>
   <?php echo css('assets/styles/font-awesome.css') ?> 
   
-  <?php echo js('assets/scripts/jquery-1.8.3.min.js') ?>
-  <?php echo js('assets/scripts/jquery.jplayer.min.js') ?>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- jQuery ScrollTo Plugin -->
+  <script src="//balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script>
   
+  <!-- History.js -->
+  <script src="//browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+  
+  <!-- Ajaxify -->
+  <script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
+  
+  <?php echo js('assets/scripts/jquery.jplayer.min.js') ?>
+  <?php echo js('assets/scripts/jquery.jquery.ba-hashchange.min.js') ?>
   <?php echo js('assets/scripts/scripts.js') ?>
 
 </head>

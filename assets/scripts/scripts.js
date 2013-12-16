@@ -9,10 +9,16 @@ $(document).ready(function(){
 
 });
 
-$(document).ready(function(){
+window.addEventListener("load",function() {
+   setTimeout(function(){
+    window.scrollTo(0, 0);
+    }, 0);
+});
+
+$(document).ready(function() {
 
 	$('.currently-playing').load('proxy.php', function () {
-	  Timer = window.setTimeout(updateDiv, 10000);
+		Timer = window.setTimeout(updateDiv, 10000);
 	});
 
 	$(".pause").hide();
@@ -25,17 +31,25 @@ $(document).ready(function(){
     })
     
     $(".pause").click(function(){
-        $(".pause").hide();
-        $(".currently-playing").hide();
-        $(".play").show();
+		$(".pause").hide();
+		$(".currently-playing").hide();
+		$(".play").show();
     })
-
-});
-
-window.addEventListener("load",function() {
-   setTimeout(function(){
-    window.scrollTo(0, 0);
-    }, 0);
+    
+    if (audio.addEventListener){  
+      audio.addEventListener("playing", function(){
+      	$(".play").hide();
+      	$(".pause").show();
+      	$(".currently-playing").show();
+      });
+    } else if (audio.attachEvent){  
+      audio.attachEvent("ended", function(){
+      	$(".pause").hide();
+      	$(".currently-playing").hide();
+      	$(".play").show();
+      });
+    }
+    
 });
 
 
@@ -196,7 +210,3 @@ function init_mediatypes() {
     }
 
 }
-
-
-
-
